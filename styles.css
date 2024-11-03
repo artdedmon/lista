@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centrar verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    margin: 0; /* Eliminar márgenes */
+}
+
+header {
+    margin-bottom: 20px;
+    text-align: center; /* Centrar el texto del encabezado */
+}
+
+.controls {
+    display: flex;
+    justify-content: center; /* Centrar los botones horizontalmente */
+    margin-bottom: 10px; /* Espacio entre botones y barra */
+}
+
+button {
+    margin: 0 10px; /* Espacio entre botones */
+    padding: 10px 15px;
+    font-size: 20px; /* Aumentar el tamaño de los botones */
+    cursor: pointer;
+    border: none; /* Eliminar bordes */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.increase {
+    background-color: green; /* Color del botón de aumentar */
+    color: white; /* Color del texto del botón */
+}
+
+.decrease {
+    background-color: red; /* Color del botón de disminuir */
+    color: white; /* Color del texto del botón */
+}
+
+.progress-section {
+    width: 80%; /* Asegurar que la barra ocupe el 80% del ancho de la ventana */
+}
+
+.progress-container {
+    width: 100%;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative; /* Para el posicionamiento absoluto del texto */
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+    position: relative; /* Para que el texto se coloque dentro de la barra */
+}
+
+.progress-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+}
+
+.current-value {
+    margin-top: 5px; /* Espacio entre la barra y el valor actual */
+    font-size: 24px; /* Tamaño del texto del valor actual */
+    text-align: center; /* Centrar el texto del valor actual */
+}
+
+/* Estilos para la sección de lista */
+.list-title {
+    margin-top: 20px; /* Espacio antes del título */
+    text-align: center; /* Centrar el texto del título */
+}
+
+.list-section {
+    text-align: center; /* Centrar el texto de la lista */
+}
+
+.add-item {
+    display: flex;
+    justify-content: center; /* Centrar el input y el botón */
+    margin-bottom: 10px; /* Espacio entre el campo de entrada y la lista */
+}
+
+.add-item input {
+    padding: 5px;
+    font-size: 16px; /* Tamaño del texto del input */
+    border: 1px solid #ccc; /* Bordes del input */
+    border-radius: 5px; /* Bordes redondeados del input */
+    margin-right: 5px; /* Espacio entre el input y el botón */
+}
+
+.add-item button {
+    padding: 5px 10px;
+    font-size: 16px; /* Tamaño del texto del botón */
+    cursor: pointer;
+    border: none; /* Eliminar bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: blue; /* Color del botón */
+    color: white; /* Color del texto del botón */
+}
+
+.list-section ul {
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding: 0; /* Eliminar padding por defecto */
+}
+
+.list-section li {
+    margin: 5px 0; /* Espacio entre los elementos de la lista */
+    font-size: 18px; /* Tamaño de la fuente de los elementos de la lista */
+}
+
+.tachada span {
+    text-decoration: line-through; /* Tachado para los elementos completados */
+    color: grey; /* Color del texto tachado */
+}
+
+.task-counter {
+    font-size: 18px; 
+    margin-top: 10px; 
+    text-align: center; 
+}

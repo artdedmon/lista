@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Progreso con Vue 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="app">
+        <header>
+            <h1>Barra de Progreso</h1>
+        </header>
+        <section class="controls">
+            <button class="increase" @click="aumentarProgreso">+</button>
+            <button class="decrease" @click="disminuirProgreso">-</button>
+        </section>
+        <section class="progress-section">
+            <div class="progress-container">
+                <div class="progress-bar" :style="estiloBarraProgreso">
+                    <span class="progress-text">{{ progreso }}%</span>
+                </div>
+            </div>
+            <p class="current-value">{{ progreso }}</p> <!-- Valor actual sin el signo de porcentaje -->
+        </section>
+
+        <!-- Título para la sección de la lista -->
+        <section class="list-title">
+            <h2>Lista de Tareas</h2>
+        </section>
+
+        <section class="list-section">
+            <div class="add-item">
+                <input type="text" v-model="nuevoItem" placeholder="Agregar nueva tarea" />
+                <button @click="agregarItem">Agregar</button>
+            </div>
+            <ul>
+                <li v-for="(item, index) in items" :key="index" :class="{ 'tachada': item.completada }">
+                    <input type="checkbox" v-model="item.completada" />
+                    <span>{{ item.texto }}</span>
+                </li>
+            </ul>
+            <p class="task-counter">Tareas completadas: {{ tareasCompletadas }}/{{ totalTareas }}</p> <!-- Contador de tareas -->
+        </section>
+    </main>
+
+    <script src="vue3.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
